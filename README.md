@@ -54,6 +54,19 @@ Využití argumentu width (vlevo), vlastní implementace (vpravo)
 
 ## Známá omezení
 1. Za situace, kdy nelze vytvořit cestu mezi počátkem a cílem (odděleno zdí), se skript při vyčerpání všech možností sám ukončí a tedy nepokračuje nadále ve vykreslování okna s řešením.
+2. Řešená mapa musí být obdélníková.
+3. Cesta nemůže vést diagonálně.
 
 ## Závislosti
 Skript využívá moduly `csv`, `sys`, `re`, `math` a herní engine `pygame` pro vykreslení průběhu implementovaného algoritmu A*. Skript byl vyvíjen na verzi Python3.10.6 na os Linux. Funkčnost byla také otestována na MS Windows na verzi Python3.10.10.
+
+## Doporučené předvolby
+```
+python3 ./astar.py --map=maps/map1.csv --start=6,7 --goal=3,3 --squareSize=32 --delay=100
+```
+```
+python3 ./astar.py --map=maps/map2.csv --start=24,0 --goal=24,12 --squareSize=32 --delay=25
+```
+```
+python3 ./astar.py --map=maps/map3.csv --start=7,5 --goal=18,18 --squareSize=32 --delay=25
+```

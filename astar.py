@@ -235,8 +235,8 @@ astar = Astar(startX, startY, goalX, goalY)
 astar.appendOpen(Element(startX,startY,0,0,0,None,None))       # start
 
 pygame.init()
-gridSizeX = len(map)
-gridSizeY = len(map[0])
+gridSizeY = len(map)
+gridSizeX = len(map[0])
 # Check if the coordinates of start and goal are within the map and not on any wall.
 if ((startX > gridSizeX - 2) or (startY > gridSizeY - 2) or
     (goalX > gridSizeX - 2) or (goalY > gridSizeY - 2) or
@@ -251,9 +251,9 @@ pygame.display.set_caption("Astar")
 # Visualization functions
 def drawGrid():
     """Draw grid."""
-    for i in range(1, gridSizeX):
-        pygame.draw.line(window, BLACK, (0, i * squareSize), (gridSizeX * squareSize, i * squareSize))
     for i in range(1, gridSizeY):
+        pygame.draw.line(window, BLACK, (0, i * squareSize), (gridSizeX * squareSize, i * squareSize))
+    for i in range(1, gridSizeX):
         pygame.draw.line(window, BLACK, (i * squareSize, 0), (i * squareSize, gridSizeY * squareSize))
 
 def drawSquare(posX, posY, color):
